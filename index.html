@@ -17,18 +17,26 @@
             <li>page 3</li>
           </ul>
         </nav>
-        <rb-account inline-template>
+        <rb-account
+          inline-template
+          v-bind:active="activeLayer === 'account'"
+          v-on:open-account="activeLayer = 'account'"
+        >
           <div>
-            <button @click="toggleLayer">account</button>
-            <div class="layer" v-bind:class="{ active: isActive }">
+            <button v-on:click="$emit('open-account')">account</button>
+            <div class="layer" v-bind:class="{ active: active }">
               my account content
             </div>
           </div>
         </rb-account>
-        <rb-cart inline-template>
+        <rb-cart
+          inline-template
+          v-bind:active="activeLayer === 'cart'"
+          v-on:open-cart="activeLayer = 'cart'"
+        >
           <div>
-            <button @click="toggleLayer">cart</button>
-            <div class="layer" v-bind:class="{ active: isActive }">
+            <button v-on:click="$emit('open-cart')">cart</button>
+            <div class="layer" v-bind:class="{ active: active }">
               my cart content
             </div>
           </div>

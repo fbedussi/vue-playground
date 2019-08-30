@@ -5,15 +5,8 @@ const Card = Vue.component("rb-card", {
 });
 
 const layer = {
-  data: function() {
-    return {
-      isActive: false
-    };
-  },
-  methods: {
-    toggleLayer: function() {
-      this.isActive = !this.isActive;
-    }
+  props: {
+    active: Boolean
   }
 };
 
@@ -23,7 +16,7 @@ const Cart = Vue.component("rb-cart", layer);
 const app = new Vue({
   el: "#app",
   data: {
-    layerOpen: ""
+    activeLayer: ""
   },
   components: {
     "rb-account": Account,
