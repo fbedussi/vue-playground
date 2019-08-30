@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <nav>
+          <ul>
+            <li>page 1</li>
+            <li>page 2</li>
+            <li>page 3</li>
+          </ul>
+        </nav>
+        <rb-account inline-template>
+          <div>
+            <button @click="toggleLayer">account</button>
+            <div class="layer" v-bind:class="{ active: isActive }">
+              my account content
+            </div>
+          </div>
+        </rb-account>
+        <rb-cart inline-template>
+          <div>
+            <button @click="toggleLayer">cart</button>
+            <div class="layer" v-bind:class="{ active: isActive }">
+              my cart content
+            </div>
+          </div>
+        </rb-cart>
+      </header>
+      <h1>PLP</h1>
+      <ul>
+        <li>
+          <rb-card inline-template>
+            <div>
+              <h2>item</h2>
+              <h3>ddd</h3>
+              <button @click="clicco">click me</button>
+            </div>
+          </rb-card>
+        </li>
+      </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
